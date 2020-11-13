@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.odeene.formacion.dto.CityDTO;
 import com.odeene.formacion.dto.ProvinceDTO;
 import com.odeene.formacion.entities.AutonomousCommunity;
 import com.odeene.formacion.entities.Province;
