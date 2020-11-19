@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2020.11.19 a las 04:39:26 PM CET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://localhost/peticion/gs-producing-web-service">
+    <schemaBindings map="false">
+      <package name="com.odeene.formacion.soap.model"/>
+    </schemaBindings>
+    <bindings scd="tns:getAutonomousCommunitiesRequest">
+      <class ref="com.odeene.formacion.soap.model.GetAutonomousCommunitiesRequest"/>
+    </bindings>
+    <bindings scd="~tns:AutonomousCommunity">
+      <class ref="com.odeene.formacion.soap.model.AutonomousCommunity"/>
+    </bindings>
+    <bindings scd="tns:getAutonomousCommunityResponse">
+      <class ref="com.odeene.formacion.soap.model.GetAutonomousCommunityResponse"/>
+    </bindings>
+    <bindings scd="tns:getProvinceByAutonomousIdRequest">
+      <class ref="com.odeene.formacion.soap.model.GetProvinceByAutonomousIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getProvinceByAutonomousIdResponse">
+      <class ref="com.odeene.formacion.soap.model.GetProvinceByAutonomousIdResponse"/>
+    </bindings>
+    <bindings scd="~tns:Province">
+      <class ref="com.odeene.formacion.soap.model.Province"/>
+    </bindings>
+    <bindings scd="~tns:City">
+      <class ref="com.odeene.formacion.soap.model.City"/>
+    </bindings>
+  </bindings>
+</bindings>
+

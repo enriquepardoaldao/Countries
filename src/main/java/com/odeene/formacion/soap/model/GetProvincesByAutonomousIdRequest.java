@@ -10,7 +10,6 @@ package com.odeene.formacion.soap.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="community" type="{http://localhost/peticion/gs-producing-web-service}AutonomousCommunity"/&gt;
+ *         &lt;element name="communityId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "community"
+    "communityId"
 })
-@XmlRootElement(name = "getAutonomousCommunitiesRequest")
-public class GetAutonomousCommunitiesRequest {
+@XmlRootElement(name = "getProvincesByAutonomousIdRequest")
+public class GetProvincesByAutonomousIdRequest {
 
-    @XmlElement(required = true)
-    protected AutonomousCommunity community;
+    protected long communityId;
 
     /**
-     * Obtiene el valor de la propiedad community.
+     * Obtiene el valor de la propiedad communityId.
      * 
-     * @return
-     *     possible object is
-     *     {@link AutonomousCommunity }
-     *     
      */
-    public AutonomousCommunity getCommunity() {
-        return community;
+    public long getCommunityId() {
+        return communityId;
     }
 
     /**
-     * Define el valor de la propiedad community.
+     * Define el valor de la propiedad communityId.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link AutonomousCommunity }
-     *     
      */
-    public void setCommunity(AutonomousCommunity value) {
-        this.community = value;
+    public void setCommunityId(long value) {
+        this.communityId = value;
     }
 
 }

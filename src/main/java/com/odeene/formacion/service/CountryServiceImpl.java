@@ -1,4 +1,4 @@
-package com.odeene.formacion.restservice;
+package com.odeene.formacion.service;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.odeene.formacion.entities.AutonomousCommunity;
+import com.odeene.formacion.entities.AutonomousCommunityEntity;
 import com.odeene.formacion.entities.AutonomousCommunityDAO;
-import com.odeene.formacion.entities.City;
+import com.odeene.formacion.entities.CityEntity;
 import com.odeene.formacion.entities.CityDAO;
-import com.odeene.formacion.entities.Province;
+import com.odeene.formacion.entities.ProvinceEntity;
 import com.odeene.formacion.entities.ProvinceDAO;
 
 @Service
@@ -27,26 +27,26 @@ public class CountryServiceImpl implements ICountryService{
 	private CityDAO cityDao;
 	
 	@Override
-	public List<AutonomousCommunity> findAllCommunities() {
-		List<AutonomousCommunity> communities = autonomousDao.findAll();
+	public List<AutonomousCommunityEntity> findAllCommunities() {
+		List<AutonomousCommunityEntity> communities = autonomousDao.findAll();
 		return communities;
 	}
 
 	@Override
-	public List<Province> findAllProvinces() {
-		List<Province> provinces = provinceDao.findAll();
+	public List<ProvinceEntity> findAllProvinces() {
+		List<ProvinceEntity> provinces = provinceDao.findAll();
 		return provinces;
 	}
 
 	@Override
-	public List<Province> findProvincesByCommunity(Long communityId) {
-		List<Province> provinces = provinceDao.findByAutonomousCommunityId(communityId);
+	public List<ProvinceEntity> findProvincesByCommunity(Long communityId) {
+		List<ProvinceEntity> provinces = provinceDao.findByAutonomousCommunityId(communityId);
 		return provinces;
 	}
 
 	@Override
-	public List<City> findCitiesByProvince(Long provinceId) {
-		List<City> cities = cityDao.findByProvinceId(provinceId);
+	public List<CityEntity> findCitiesByProvince(Long provinceId) {
+		List<CityEntity> cities = cityDao.findByProvinceId(provinceId);
 		return cities;
 	}
 

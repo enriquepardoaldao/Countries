@@ -2,6 +2,6 @@ package com.odeene.formacion.entities;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AutonomousCommunityDAO extends JpaRepository<AutonomousCommunity, Long>{
+public interface AutonomousCommunityDAO extends JpaRepository<AutonomousCommunityEntity, Long>{
 
 }

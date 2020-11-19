@@ -11,33 +11,29 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "city")
-public class City {
+@Table(name = "Province")
+public class ProvinceEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "population")
-	private int population;
-	
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "provinceId")
-	private Province province;
-
-	public City() {
+	@JoinColumn(name = "autonomousCommunityId")
+	public AutonomousCommunityEntity autonomousCommunity;
+	
+	public ProvinceEntity() {
 		super();
 	}
 
-	public City(Long id, String name, int population, Province province) {
+	public ProvinceEntity(Long id, String name, AutonomousCommunityEntity autonomousCommunity) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.population = population;
-		this.province = province;
+		this.autonomousCommunity = autonomousCommunity;
 	}
 
 	public Long getId() {
@@ -56,21 +52,13 @@ public class City {
 		this.name = name;
 	}
 
-	public int getPopulation() {
-		return population;
+
+	public AutonomousCommunityEntity getAutonomousCommunity() {
+		return autonomousCommunity;
 	}
 
-	public void setPopulation(int population) {
-		this.population = population;
-	}
-
-
-	public Province getProvince() {
-		return province;
-	}
-
-	public void setProvince(Province province) {
-		this.province = province;
+	public void setAutonomousCommunity(AutonomousCommunityEntity autonomousCommunity) {
+		this.autonomousCommunity = autonomousCommunity;
 	}
 	
 	

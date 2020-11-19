@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "AutonomousCommunity")
-public class AutonomousCommunity {
+public class AutonomousCommunityEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +24,11 @@ public class AutonomousCommunity {
 	private int area;
 	
 	
-	public AutonomousCommunity() {
+	public AutonomousCommunityEntity() {
 		super();
 	}
 
-	public AutonomousCommunity(Long id, String name, int area) {
+	public AutonomousCommunityEntity(Long id, String name, int area) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -7,7 +7,7 @@
 	<xs:element name="getAutonomousCommunitiesRequest">
 		<xs:complexType>
 			<xs:sequence>                 
-				
+				<xs:element name="community" type="tns:AutonomousCommunity"/>    
 			</xs:sequence>         
 		</xs:complexType>     
 	</xs:element> 
@@ -15,14 +15,30 @@
     <xs:element name="getAutonomousCommunityResponse">         
     	<xs:complexType>             
     		<xs:sequence>                 
-    			<xs:element name="community" type="tns:AutonomousCommunity"/>             
+    			<xs:element name="community" type="tns:AutonomousCommunity" maxOccurs="unbounded"/>             
     		</xs:sequence>         
     	</xs:complexType>     
-    </xs:element> 
+    </xs:element>
+    
+    <xs:element name="getProvincesByAutonomousIdRequest">
+		<xs:complexType>
+			<xs:sequence>                 
+				<xs:element name="communityId" type="xs:long"/>    
+			</xs:sequence>         
+		</xs:complexType>     
+	</xs:element> 
  
+    <xs:element name="getProvinceByAutonomousIdResponse">         
+    	<xs:complexType>             
+    		<xs:sequence>                 
+    			<xs:element name="province" type="tns:Province" maxOccurs="unbounded"/>             
+    		</xs:sequence>         
+    	</xs:complexType>     
+    </xs:element>
+
     <xs:complexType name="AutonomousCommunity">         
     	<xs:sequence>             
-    		<xs:element name="autonomousCommunityId" type="xs:int"/>             
+    		<xs:element name="autonomousCommunityId" type="xs:long"/>             
     		<xs:element name="name" type="xs:string"/>             
     		<xs:element name="area" type="xs:int"/>         
     	</xs:sequence> 
@@ -30,14 +46,14 @@
  
     <xs:complexType name="Province">         
     	<xs:sequence>             
-    		<xs:element name="provinceId" type="xs:int"/>             
+    		<xs:element name="provinceId" type="xs:long"/>             
     		<xs:element name="name" type="xs:string"/>         
     	</xs:sequence>     
     </xs:complexType> 
  
     <xs:complexType name="City">         
     	<xs:sequence>             
-    		<xs:element name="cityId" type="xs:int"/>             
+    		<xs:element name="cityId" type="xs:long"/>             
     		<xs:element name="name" type="xs:string"/>             
     		<xs:element name="population" type="xs:int"/>         
     	</xs:sequence>     

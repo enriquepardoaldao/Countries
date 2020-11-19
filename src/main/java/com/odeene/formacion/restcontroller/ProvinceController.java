@@ -2,6 +2,7 @@ package com.odeene.formacion.restcontroller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,9 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.odeene.formacion.dto.CityDTO;
 import com.odeene.formacion.dto.ProvinceDTO;
-import com.odeene.formacion.entities.City;
-import com.odeene.formacion.entities.Province;
-import com.odeene.formacion.restservice.ICountryService;
+import com.odeene.formacion.entities.CityEntity;
+import com.odeene.formacion.service.ICountryService;
 
 @RestController
 @RequestMapping("/provinces")
@@ -25,28 +25,18 @@ public class ProvinceController {
 	private ICountryService countryService;
 
 	@GetMapping("")
-	public ResponseEntity<?> getAllProvinces() {
-
-		List<Province> provinces = countryService.findAllProvinces();
-		List<ProvinceDTO> provDTO = new ArrayList<>();
-
-		provinces.stream().forEach((p) -> {
-			provDTO.add(new ProvinceDTO(p.getId(), p.getName(), p.getAutonomousCommunity().getName()));
-		});
-		return new ResponseEntity<List<ProvinceDTO>>(provDTO, HttpStatus.OK);
+	public List<ProvinceDTO> getAllProvinces() {
+        return countryService.findAllProvinces().stream()
+            .map(province -> new ProvinceDTO(province.getId(), province.getName(), province.getAutonomousCommunity().getName()))
+            .collect(Collectors.toList());
 	}
 
 	@GetMapping("/{id}/cities")
-	public ResponseEntity<?> getCitiesOfProvince(@PathVariable long id) {
+	public List<CityDTO> getCitiesOfProvince(@PathVariable long id) {
 
-		List<City> cities = countryService.findCitiesByProvince(id);
-		List<CityDTO> cityDto = new ArrayList<>();
-
-		cities.stream().forEach((c) -> {
-			cityDto.add(new CityDTO(c.getId(), c.getName(), c.getPopulation(), c.getProvince().getName()));
-		});
-
-		return new ResponseEntity<List<CityDTO>>(cityDto, HttpStatus.OK);
+		return countryService.findCitiesByProvince(id).stream()
+				.map(city -> new CityDTO(city.getId(), city.getName(), city.getPopulation(), city.getProvince().getName()))
+				.collect(Collectors.toList());
 	}
 
 }

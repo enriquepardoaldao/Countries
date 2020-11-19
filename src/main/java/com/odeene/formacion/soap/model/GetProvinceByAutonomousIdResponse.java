@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="community" type="{http://localhost/peticion/gs-producing-web-service}AutonomousCommunity" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="province" type="{http://localhost/peticion/gs-producing-web-service}Province" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "community"
+    "province"
 })
-@XmlRootElement(name = "getAutonomousCommunityResponse")
-public class GetAutonomousCommunityResponse {
+@XmlRootElement(name = "getProvinceByAutonomousIdResponse")
+public class GetProvinceByAutonomousIdResponse {
 
     @XmlElement(required = true)
-    protected List<AutonomousCommunity> community;
+    protected List<Province> province;
 
     /**
-     * Gets the value of the community property.
+     * Gets the value of the province property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the community property.
+     * This is why there is not a <CODE>set</CODE> method for the province property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCommunity().add(newItem);
+     *    getProvince().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AutonomousCommunity }
+     * {@link Province }
      * 
      * 
      */
-    public List<AutonomousCommunity> getCommunity() {
-        if (community == null) {
-            community = new ArrayList<AutonomousCommunity>();
+    public List<Province> getProvince() {
+        if (province == null) {
+            province = new ArrayList<Province>();
         }
-        return this.community;
+        return this.province;
     }
 
 }

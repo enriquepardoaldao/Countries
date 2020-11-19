@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.11.13 a las 09:52:17 AM CET 
+// Generado el: 2020.11.19 a las 05:39:55 PM CET 
 //
 
 
@@ -45,6 +45,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AutonomousCommunity }
+     * 
+     */
+    public AutonomousCommunity createAutonomousCommunity() {
+        return new AutonomousCommunity();
+    }
+
+    /**
      * Create an instance of {@link GetAutonomousCommunityResponse }
      * 
      */
@@ -53,11 +61,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AutonomousCommunity }
+     * Create an instance of {@link GetProvincesByAutonomousIdRequest }
      * 
      */
-    public AutonomousCommunity createAutonomousCommunity() {
-        return new AutonomousCommunity();
+    public GetProvincesByAutonomousIdRequest createGetProvincesByAutonomousIdRequest() {
+        return new GetProvincesByAutonomousIdRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetProvinceByAutonomousIdResponse }
+     * 
+     */
+    public GetProvinceByAutonomousIdResponse createGetProvinceByAutonomousIdResponse() {
+        return new GetProvinceByAutonomousIdResponse();
     }
 
     /**

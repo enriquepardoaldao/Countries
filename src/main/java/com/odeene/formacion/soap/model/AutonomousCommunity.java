@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.11.13 a las 09:52:17 AM CET 
+// Generado el: 2020.11.19 a las 05:39:55 PM CET 
 //
 
 
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="autonomousCommunityId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="autonomousCommunityId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AutonomousCommunity {
 
-    protected int autonomousCommunityId;
+    protected long autonomousCommunityId;
     @XmlElement(required = true)
     protected String name;
     protected int area;
@@ -52,7 +52,7 @@ public class AutonomousCommunity {
      * Obtiene el valor de la propiedad autonomousCommunityId.
      * 
      */
-    public int getAutonomousCommunityId() {
+    public long getAutonomousCommunityId() {
         return autonomousCommunityId;
     }
 
@@ -60,7 +60,7 @@ public class AutonomousCommunity {
      * Define el valor de la propiedad autonomousCommunityId.
      * 
      */
-    public void setAutonomousCommunityId(int value) {
+    public void setAutonomousCommunityId(long value) {
         this.autonomousCommunityId = value;
     }
 
