@@ -13,8 +13,8 @@ import com.odeene.formacion.entities.ProvinceEntity;
 import com.odeene.formacion.service.ICountryService;
 import com.odeene.formacion.soap.model.AutonomousCommunity;
 import com.odeene.formacion.soap.model.GetAutonomousCommunityResponse;
+import com.odeene.formacion.soap.model.GetProvinceByAutonomousIdRequest;
 import com.odeene.formacion.soap.model.GetProvinceByAutonomousIdResponse;
-import com.odeene.formacion.soap.model.GetProvincesByAutonomousIdRequest;
 import com.odeene.formacion.soap.model.Province;
 
 @Endpoint
@@ -24,9 +24,9 @@ public class AutonomousEndPoint {
 	@Autowired
 	private ICountryService countryService;
 	
-	@PayloadRoot(namespace = NAMESPACE_URI, localPart="getAutonomousCommunitiesRequest")
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart="getAutonomousCommunityRequest")
 	@ResponsePayload
-	public GetAutonomousCommunityResponse getAutonomousCommunitiesRequest() {
+	public GetAutonomousCommunityResponse getAutonomousCommunityRequest() {
 		
 		GetAutonomousCommunityResponse response = new GetAutonomousCommunityResponse();
 		List<AutonomousCommunityEntity> autonomias = countryService.findAllCommunities();
@@ -39,9 +39,9 @@ public class AutonomousEndPoint {
 		
 	}
 	
-	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getProvincesByAutonomousIdRequest")
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getProvinceByAutonomousIdRequest")
 	@ResponsePayload
-	public GetProvinceByAutonomousIdResponse getProvincesByAutonomousIdRequest(@RequestPayload  GetProvincesByAutonomousIdRequest request) {
+	public GetProvinceByAutonomousIdResponse getProvinceByAutonomousIdRequest(@RequestPayload  GetProvinceByAutonomousIdRequest request) {
 		
 		GetProvinceByAutonomousIdResponse response = new GetProvinceByAutonomousIdResponse();
 		List<ProvinceEntity> provincia = countryService.findProvincesByCommunity(request.getCommunityId());
@@ -59,6 +59,8 @@ public class AutonomousEndPoint {
 		
 		soapProvince.setProvinceId(province.getId());
 		soapProvince.setName(province.getName());
+		soapProvince.setAutonomyName(province.getAutonomousCommunity().getName());
+		soapProvince.setAutonomyArea(province.getAutonomousCommunity().getArea());
 		
 		return soapProvince;
 	}

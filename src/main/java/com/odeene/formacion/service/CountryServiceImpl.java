@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.odeene.formacion.entities.AutonomousCommunityEntity;
 import com.odeene.formacion.entities.AutonomousCommunityDAO;
-import com.odeene.formacion.entities.CityEntity;
+import com.odeene.formacion.entities.AutonomousCommunityEntity;
 import com.odeene.formacion.entities.CityDAO;
-import com.odeene.formacion.entities.ProvinceEntity;
+import com.odeene.formacion.entities.CityEntity;
 import com.odeene.formacion.entities.ProvinceDAO;
+import com.odeene.formacion.entities.ProvinceEntity;
 
 @Service
 @Transactional(readOnly=true)

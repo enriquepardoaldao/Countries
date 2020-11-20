@@ -21,7 +21,7 @@ public class ProvinceEntity {
 	@Column(name = "name")
 	private String name;
 	
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "autonomousCommunityId")
 	public AutonomousCommunityEntity autonomousCommunity;
 	

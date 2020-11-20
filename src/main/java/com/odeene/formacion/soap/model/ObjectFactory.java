@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.11.19 a las 05:39:55 PM CET 
+// Generado el: 2020.11.20 a las 10:23:25 AM CET 
 //
 
 
@@ -37,11 +37,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAutonomousCommunitiesRequest }
+     * Create an instance of {@link GetAutonomousCommunityRequest }
      * 
      */
-    public GetAutonomousCommunitiesRequest createGetAutonomousCommunitiesRequest() {
-        return new GetAutonomousCommunitiesRequest();
+    public GetAutonomousCommunityRequest createGetAutonomousCommunityRequest() {
+        return new GetAutonomousCommunityRequest();
     }
 
     /**
@@ -61,11 +61,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetProvincesByAutonomousIdRequest }
+     * Create an instance of {@link GetProvinceByAutonomousIdRequest }
      * 
      */
-    public GetProvincesByAutonomousIdRequest createGetProvincesByAutonomousIdRequest() {
-        return new GetProvincesByAutonomousIdRequest();
+    public GetProvinceByAutonomousIdRequest createGetProvinceByAutonomousIdRequest() {
+        return new GetProvinceByAutonomousIdRequest();
     }
 
     /**
@@ -82,6 +82,38 @@ public class ObjectFactory {
      */
     public Province createProvince() {
         return new Province();
+    }
+
+    /**
+     * Create an instance of {@link GetProvincesRequest }
+     * 
+     */
+    public GetProvincesRequest createGetProvincesRequest() {
+        return new GetProvincesRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetProvincesResponse }
+     * 
+     */
+    public GetProvincesResponse createGetProvincesResponse() {
+        return new GetProvincesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCityByProvinceIdRequest }
+     * 
+     */
+    public GetCityByProvinceIdRequest createGetCityByProvinceIdRequest() {
+        return new GetCityByProvinceIdRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetCityByProvinceIdResponse }
+     * 
+     */
+    public GetCityByProvinceIdResponse createGetCityByProvinceIdResponse() {
+        return new GetCityByProvinceIdResponse();
     }
 
     /**

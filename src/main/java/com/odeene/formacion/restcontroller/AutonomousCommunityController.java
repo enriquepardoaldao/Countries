@@ -1,8 +1,6 @@
 package com.odeene.formacion.restcontroller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.odeene.formacion.dto.ProvinceDTO;
 import com.odeene.formacion.entities.AutonomousCommunityEntity;
-import com.odeene.formacion.entities.ProvinceEntity;
 import com.odeene.formacion.service.ICountryService;
 
 @RestController

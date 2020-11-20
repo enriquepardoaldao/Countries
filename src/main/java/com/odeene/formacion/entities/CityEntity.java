@@ -24,7 +24,7 @@ public class CityEntity {
 	@Column(name = "population")
 	private int population;
 	
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "provinceId")
 	private ProvinceEntity province;
 

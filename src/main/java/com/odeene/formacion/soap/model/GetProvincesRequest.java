@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.11.19 a las 05:39:55 PM CET 
+// Generado el: 2020.11.20 a las 10:23:25 AM CET 
 //
 
 
@@ -10,6 +10,7 @@ package com.odeene.formacion.soap.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="communityId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="province" type="{http://localhost/peticion/gs-producing-web-service}Province"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "communityId"
+    "province"
 })
-@XmlRootElement(name = "getProvincesByAutonomousIdRequest")
-public class GetProvincesByAutonomousIdRequest {
+@XmlRootElement(name = "getProvincesRequest")
+public class GetProvincesRequest {
 
-    protected long communityId;
+    @XmlElement(required = true)
+    protected Province province;
 
     /**
-     * Obtiene el valor de la propiedad communityId.
+     * Obtiene el valor de la propiedad province.
      * 
+     * @return
+     *     possible object is
+     *     {@link Province }
+     *     
      */
-    public long getCommunityId() {
-        return communityId;
+    public Province getProvince() {
+        return province;
     }
 
     /**
-     * Define el valor de la propiedad communityId.
+     * Define el valor de la propiedad province.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Province }
+     *     
      */
-    public void setCommunityId(long value) {
-        this.communityId = value;
+    public void setProvince(Province value) {
+        this.province = value;
     }
 
 }
